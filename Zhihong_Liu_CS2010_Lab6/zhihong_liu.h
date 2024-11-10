@@ -1,6 +1,5 @@
-#ifndef zhihong_liu_h
-#define zhihong_liu_h
-
+#ifndef ZHIHONG_LIU_H
+#define ZHIHONG_LIU_H
 
 using namespace std;
 
