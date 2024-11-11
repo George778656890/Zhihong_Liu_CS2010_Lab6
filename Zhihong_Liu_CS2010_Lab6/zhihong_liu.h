@@ -64,9 +64,10 @@ bool comp2(const alloc& a, const alloc& b) {//Compare the lease time
 
 void checkLeaseExpiry(freelist_t& f, alloclist_t& a, int clock) {
 	for (int i = 0; i < a.size(); ++i) {
-		if (a[i].second <= clock) {
+		if (a[i].second == clock) {
 			f.push_back(a[i].first);//Give back the memory to freeList
 			a.erase(a.begin() + i);//Remove the expired "alloc object" from the "allocList"
+			--i;//The list shrinks,so the index needs to go back one position
 		}
 	}
 }
